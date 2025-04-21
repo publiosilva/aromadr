@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+.header {
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navList li {
+  margin-bottom: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: clamp(14px, 2vw, 18px);
+  color: #3182ce;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: #f0f4f8;
+  color: #2b6cb0;
+}
+
+.navLinkActive {
+  background-color: #2d3748;
+  color: white;
+}
+
+.content {
+  flex-grow: 1;
+  width: calc(100% - 60px);
+  max-width: 1100px;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2d3748;
+  color: white;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+  }
+
+  .navList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navList li {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+  }
+
+  .content {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 20px 10px;
+  }
+
+  .content {
+    width: calc(100% - 30px);
+    padding: 15px;
+  }
+
+  .navLink {
+    padding: 8px;
+  }
+}

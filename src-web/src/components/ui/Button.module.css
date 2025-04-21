@@ -1,0 +1,31 @@
+.button {
+  background-color: #3182ce;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button.small {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.button:hover {
+  background-color: #2b6cb0;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(48, 130, 206, 0.5);
+}
+
+.button:disabled {
+  background-color: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+}

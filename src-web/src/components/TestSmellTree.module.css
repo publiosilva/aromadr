@@ -1,0 +1,34 @@
+.fileTree {
+  font-family: monospace;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.node {
+  position: relative;
+  border-left: 2px solid #888;
+}
+
+.nodeHeader {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.branchIcon {
+  color: #888;
+  margin-right: 5px;
+}
+
+.nodeName {
+  color: #333;
+  margin-right: 10px;
+}
+
+.nodeName strong {
+  color: #C84B56;
+}
+
+.childNodes {
+  margin-left: 20px;
+}

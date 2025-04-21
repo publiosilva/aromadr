@@ -1,0 +1,23 @@
+html,
+body {
+  background-color: #f4f7fc;
+}
+
+.test-smell-line {
+  position: relative;
+  overflow: visible;
+}
+
+.test-smell-line:hover::after {
+  content: attr(data-smell);
+  position: absolute;
+  left: 20px;
+  top: -20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 9999;
+}
