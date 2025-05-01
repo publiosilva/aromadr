@@ -30,22 +30,43 @@ http://localhost:8000
 
 ## AromaDR API
 
-When the Docker image is running, an API is available on port 3000. You can use the API by making the following request:
+When the Docker image is running, an API is available on port 3000. You can use the API by making the following requests:
 
-```bash
-curl --location 'http://localhost:3000/test-smells/detect' \
+### Detect Test Smells in File
+
+### Parameters:
+- **`language`**: The programming language of the repository (`csharp`, `java`, `javascript`, or `python`).
+- **`framework`**: The testing framework used (`xunit`, `junit`, `jest`, or `pytest`).
+- **`testFileContent`**: The content of the test file to analyze.
+
+### Example:
+```
+curl --location 'http://localhost:3000/file-test-smells/detect' \
 --header 'Content-Type: application/json' \
 --data '{
-    "language": "csharp | java | javascript | python",
-    "framework": "xunit | junit | jest | pytest",
-    "repositoryURL": "https://github.com/public/repository/url"
+    "language": "csharp",
+    "framework": "xunit",
+    "testFileContent": "public class MyClassTest { ... }"
 }'
 ```
+
+### Detect Test Smells in Repository
 
 ### Parameters:
 - **`language`**: The programming language of the repository (`csharp`, `java`, `javascript`, or `python`).
 - **`framework`**: The testing framework used (`xunit`, `junit`, `jest`, or `pytest`).
 - **`repositoryURL`**: The URL of the public repository to analyze.
+
+### Example:
+```
+curl --location 'http://localhost:3000/project-test-smells/detect' \
+--header 'Content-Type: application/json' \
+--data '{
+    "language": "csharp",
+    "framework": "xunit",
+    "repositoryURL": "https://github.com/public/repository/url"
+}'
+```
 
 ## 🤝 Contributing
 We welcome contributions! Feel free to submit issues or pull requests.
