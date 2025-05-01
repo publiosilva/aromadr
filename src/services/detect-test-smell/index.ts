@@ -5,7 +5,6 @@ export * from './detect-empty-test-test-smell';
 export * from './detect-exception-handling-test-smell';
 export * from './detect-ignored-test-test-smell';
 export * from './detect-magic-number-test-test-smell';
-export * from './detect-redundant-assertion-test-smell';
 export * from './detect-redundant-print-test-smell';
 export * from './detect-sleepy-test-test-smell';
 export * from './detect-unknown-test-test-smell';
