@@ -8,15 +8,15 @@ export class DetectRedundantPrintTestSmellService implements DetectTestSmell {
     for (const test of testSuite.tests) {
       const testSmells: TestSmell[] = [];
       
-      const sleepEvent = test.events.find(({ type }) => type === TestEventTypeModel.print);
+      const printEvent = test.events.find(({ type }) => type === TestEventTypeModel.print);
       
-      if (sleepEvent) {
+      if (printEvent) {
         testSmells.push({
-          name: 'Re',
-          startLine: sleepEvent.startLine,
-          endLine: sleepEvent.endLine,
-          startColumn: sleepEvent.startColumn,
-          endColumn: sleepEvent.endColumn,
+          name: 'RedundantPrint',
+          startLine: printEvent.startLine,
+          endLine: printEvent.endLine,
+          startColumn: printEvent.startColumn,
+          endColumn: printEvent.endColumn,
         });
       }
       
