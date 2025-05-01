@@ -1,7 +1,7 @@
 import { ExtractTestsFromAST } from '../../../domain/usecases';
 import { DetectProjectTestSmellsController } from '../../../presentation/controllers';
 import { Controller } from '../../../presentation/protocols';
-import { makeDetectAssertionRouletteTestSmellService, makeDetectConditionalTestTestSmellService, makeDetectCSharpXUnitTestFilesService, makeDetectDuplicateAssertTestSmellService, makeDetectEmptyTestTestSmellService, makeDetectExceptionHandlingTestSmellService, makeDetectIgnoredTestTestSmellService, makeDetectJavaJUnitTestFilesService, makeDetectJavaScriptJestTestFilesService, makeDetectMagicNumberTestTestSmellService, makeDetectPythonPyTestTestFilesService, makeDetectPythonUnittestTestFilesService, makeDetectSleepyTestTestSmellService, makeDetectUnknownTestTestSmellService, makeDownloadGithubRepositoryService, makeExtractTestsFromCSharpXUnitASTService, makeExtractTestsFromJavaJUnitASTService, makeExtractTestsFromJavaScriptJestASTService, makeExtractTestsFromPythonPyTestASTService, makeExtractTestsFromPythonUnittestASTService, makeGenerateASTService } from '../services';
+import { makeDetectAssertionRouletteTestSmellService, makeDetectConditionalTestTestSmellService, makeDetectCSharpXUnitTestFilesService, makeDetectDuplicateAssertTestSmellService, makeDetectEmptyTestTestSmellService, makeDetectExceptionHandlingTestSmellService, makeDetectIgnoredTestTestSmellService, makeDetectJavaJUnitTestFilesService, makeDetectJavaScriptJestTestFilesService, makeDetectMagicNumberTestTestSmellService, makeDetectPythonPyTestTestFilesService, makeDetectPythonUnittestTestFilesService, makeDetectRedundantAssertionTestSmellService, makeDetectRedundantPrintTestSmellService, makeDetectSleepyTestTestSmellService, makeDetectUnknownTestTestSmellService, makeDownloadGithubRepositoryService, makeExtractTestsFromCSharpXUnitASTService, makeExtractTestsFromJavaJUnitASTService, makeExtractTestsFromJavaScriptJestASTService, makeExtractTestsFromPythonPyTestASTService, makeExtractTestsFromPythonUnittestASTService, makeGenerateASTService } from '../services';
 
 export const makeDetectProjectTestSmellsController = (): Controller => {
   const detectTestFilesServices = new Map([
@@ -30,6 +30,8 @@ export const makeDetectProjectTestSmellsController = (): Controller => {
     makeDetectSleepyTestTestSmellService(),
     makeDetectUnknownTestTestSmellService(),
     makeDetectExceptionHandlingTestSmellService(),
+    makeDetectRedundantPrintTestSmellService(),
+    makeDetectRedundantAssertionTestSmellService(),
   ];
   const controller = new DetectProjectTestSmellsController(
     detectTestFilesServices,

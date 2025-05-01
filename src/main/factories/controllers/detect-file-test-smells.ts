@@ -1,7 +1,7 @@
 import { ExtractTestsFromAST } from '../../../domain/usecases';
 import { DetectFileTestSmellsController } from '../../../presentation/controllers';
 import { Controller } from '../../../presentation/protocols';
-import { makeDetectAssertionRouletteTestSmellService, makeDetectConditionalTestTestSmellService, makeDetectDuplicateAssertTestSmellService, makeDetectEmptyTestTestSmellService, makeDetectExceptionHandlingTestSmellService, makeDetectIgnoredTestTestSmellService, makeDetectMagicNumberTestTestSmellService, makeDetectSleepyTestTestSmellService, makeDetectUnknownTestTestSmellService, makeExtractTestsFromCSharpXUnitASTService, makeExtractTestsFromJavaJUnitASTService, makeExtractTestsFromJavaScriptJestASTService, makeExtractTestsFromPythonPyTestASTService, makeExtractTestsFromPythonUnittestASTService, makeGenerateASTService } from '../services';
+import { makeDetectAssertionRouletteTestSmellService, makeDetectConditionalTestTestSmellService, makeDetectDuplicateAssertTestSmellService, makeDetectEmptyTestTestSmellService, makeDetectExceptionHandlingTestSmellService, makeDetectIgnoredTestTestSmellService, makeDetectMagicNumberTestTestSmellService, makeDetectRedundantAssertionTestSmellService, makeDetectRedundantPrintTestSmellService, makeDetectSleepyTestTestSmellService, makeDetectUnknownTestTestSmellService, makeExtractTestsFromCSharpXUnitASTService, makeExtractTestsFromJavaJUnitASTService, makeExtractTestsFromJavaScriptJestASTService, makeExtractTestsFromPythonPyTestASTService, makeExtractTestsFromPythonUnittestASTService, makeGenerateASTService } from '../services';
 
 export const makeDetectFileTestSmellsController = (): Controller => {
   const extractTestsFromASTServices = new Map([
@@ -22,6 +22,8 @@ export const makeDetectFileTestSmellsController = (): Controller => {
     makeDetectSleepyTestTestSmellService(),
     makeDetectUnknownTestTestSmellService(),
     makeDetectExceptionHandlingTestSmellService(),
+    makeDetectRedundantPrintTestSmellService(),
+    makeDetectRedundantAssertionTestSmellService(),
   ];
   const languageExtensionMap = new Map([
     ['csharp', '.cs'],

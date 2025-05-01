@@ -1,5 +1,5 @@
 import { DetectTestSmell } from '../../../domain/usecases';
-import { DetectAssertionRouletteTestSmellService, DetectConditionalTestTestSmellService, DetectDuplicateAssertTestSmellService, DetectEmptyTestTestSmellService, DetectExceptionHandlingTestSmellService, DetectIgnoredTestTestSmellService, DetectMagicNumberTestTestSmellService, DetectSleepyTestTestSmellService, DetectUnknownTestTestSmellService } from '../../../services';
+import { DetectAssertionRouletteTestSmellService, DetectConditionalTestTestSmellService, DetectDuplicateAssertTestSmellService, DetectEmptyTestTestSmellService, DetectExceptionHandlingTestSmellService, DetectIgnoredTestTestSmellService, DetectMagicNumberTestTestSmellService, DetectRedundantAssertionTestSmellService, DetectRedundantPrintTestSmellService, DetectSleepyTestTestSmellService, DetectUnknownTestTestSmellService } from '../../../services';
 
 export function makeDetectAssertionRouletteTestSmellService(): DetectTestSmell {
   return new DetectAssertionRouletteTestSmellService();
@@ -35,4 +35,12 @@ export function makeDetectEmptyTestTestSmellService(): DetectTestSmell {
 
 export function makeDetectExceptionHandlingTestSmellService(): DetectTestSmell {
   return new DetectExceptionHandlingTestSmellService();
+}
+
+export function makeDetectRedundantPrintTestSmellService(): DetectTestSmell {
+  return new DetectRedundantPrintTestSmellService();
+}
+
+export function makeDetectRedundantAssertionTestSmellService(): DetectTestSmell {
+  return new DetectRedundantAssertionTestSmellService();
 }
