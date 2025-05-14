@@ -8,7 +8,7 @@ const App = () => {
     <Router>
       <div className={styles.container}>
         <header className={styles.header}>
-          <h1 className={styles.title}>AromaDR</h1>
+          <h1 className={styles.title}>AromaDr</h1>
           <p className={styles.subtitle}>A language-independent tool to detect test smells.</p>
         </header>
 
@@ -44,7 +44,7 @@ const App = () => {
         </div>
 
         <footer className={styles.footer}>
-          <p>&copy; 2025 AromaDR. All rights reserved.</p>
+          <p>&copy; 2025 AromaDr. All rights reserved.</p>
         </footer>
       </div>
     </Router>

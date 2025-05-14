@@ -1,6 +1,6 @@
-# AromaDR
+# AromaDr
 
-AromaDR is a tool designed to analyze test smells in a language-independent manner, providing insights into improving test quality.
+AromaDr is a tool designed to analyze test smells in a language-independent manner, providing insights into improving test quality.
 
 ## 🚀 Getting Started
 
@@ -8,14 +8,14 @@ AromaDR is a tool designed to analyze test smells in a language-independent mann
 Ensure you have [Docker](https://www.docker.com/get-started) installed on your system.
 
 ### Build the Docker Image
-To build the AromaDR Docker image, run the following command:
+To build the AromaDr Docker image, run the following command:
 
 ```sh
 docker build -t aromadr .
 ```
 
 ### Run the Container
-Execute the following command to start AromaDR:
+Execute the following command to start AromaDr:
 
 ```sh
 docker run --rm -it -p 3000:3000 -p 8000:8000 aromadr
@@ -28,7 +28,7 @@ Once the container is running, open your browser and navigate to:
 http://localhost:8000
 ```
 
-## AromaDR API
+## AromaDr API
 
 When the Docker image is running, an API is available on port 3000. You can use the API by making the following requests:
 
