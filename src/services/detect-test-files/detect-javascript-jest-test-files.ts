@@ -14,10 +14,20 @@ export class DetectJavaScriptJestTestFilesService implements DetectTestFiles {
 
         if (entry.isDirectory()) {
           await traverseDirectory(fullPath);
-        } else if (entry.isFile() && entry.name.endsWith('.js')) {
+        } else if (entry.isFile() && (entry.name.endsWith('.js') || entry.name.endsWith('.ts'))) {
           const fileContent = await fs.promises.readFile(fullPath, 'utf-8');
+          const testPatterns = [
+            'it(',
+            'test(',
+            'xit(',
+            'xtest(',
+            'it.only(',
+            'test.only(',
+            'it.skip(',
+            'test.skip(',
+          ];
 
-          if (fileContent.includes('it(') || fileContent.includes('test(')) {
+          if (testPatterns.some(pattern => fileContent.includes(pattern))) {
             testFiles.push(fullPath);
           }
         }
