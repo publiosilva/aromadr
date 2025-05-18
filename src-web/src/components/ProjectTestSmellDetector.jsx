@@ -77,7 +77,7 @@ const ProjectTestSmellDetector = () => {
   const languageFrameworkOptions = [
     { value: 'csharp-xunit', label: 'C# - xUnit' },
     { value: 'java-junit', label: 'Java - JUnit' },
-    { value: 'javascript-jest', label: 'JavaScript - Jest' },
+    { value: 'javascript-jest', label: 'JavaScript - Jest or TypeScript - Jest' },
     { value: 'python-pytest', label: 'Python - PyTest' },
   ];
 

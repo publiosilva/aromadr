@@ -2,7 +2,7 @@ import { ASTModel, ASTNodeModel, TestAssertModel, TestEventModel, TestEventTypeM
 import { ExtractTestsFromAST, FindAllFunctionOrMethodInvocations, GetAllStatements, GetLiteralValue } from '../../domain/usecases';
 
 export class ExtractTestsFromJavaScriptJestASTService implements ExtractTestsFromAST {
-  private readonly testMethods = ['it', 'test'];
+  private readonly testMethods = ['it', 'test', 'it.only', 'test.only', 'it.skip', 'test.skip', 'xit', 'xtest'];
 
   private readonly assertMethods = ['expect'];
 
@@ -10,7 +10,7 @@ export class ExtractTestsFromJavaScriptJestASTService implements ExtractTestsFro
 
   private readonly sleepMethods = ['setTimeout', 'setInterval'];
 
-  private readonly disableAnnotations = ['skip', 'xtest', 'xit'];
+  private readonly disableAnnotations = ['test.skip', 'it.skip', 'xtest', 'xit'];
 
   constructor(
     private findAllMethodInvocations: FindAllFunctionOrMethodInvocations,
