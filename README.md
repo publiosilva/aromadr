@@ -2,8 +2,6 @@
 
 AromaDr is a tool designed to analyze test smells in a language-independent manner, providing insights into improving test quality.
 
-See the demonstration video [here](./docs/AromaDr.mp4)
-
 ## 🚀 Getting Started
 
 ### Prerequisites
